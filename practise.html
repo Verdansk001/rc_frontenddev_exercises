@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Card Component - Lab Review</title>
+    <style>
+        /* CSS Root Variables for Themes */
+        :root {
+            --primary-bg: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #38bdf8;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background-color: var(--primary-bg);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex; /* Flexbox Centering Revision */
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* Profile Card Shell Structure */
+        .profile-card {
+            background-color: var(--card-bg);
+            border-radius: 16px;
+            width: 100%;
+            max-width: 360px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-header {
+            background: linear-gradient(135deg, #0284c7, #4f46e5);
+            height: 100px;
+        }
+
+        .card-body {
+            padding: 24px;
+            text-align: center;
+            position: relative;
+        }
+
+        .avatar {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            border: 4px solid var(--card-bg);
+            margin-top: -65px;
+            background-color: #cbd5e1;
+        }
+
+        .user-name {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-top: 12px;
+        }
+
+        .user-role {
+            color: var(--accent-color);
+            font-size: 0.875rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+
+        /* Grid Layout Revision for Stats Section */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            margin-top: 20px;
+        }
+
+        .stat-item h4 {
+            font-size: 1.1rem;
+            color: var(--text-main);
+        }
+
+        .stat-item p {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
+        /* Media Query for Mobile Device Breakpoints */
+        @media (max-width: 400px) {
+            .profile-card {
+                max-width: 100%;
+            }
+            .stats-grid {
+                grid-template-columns: 1fr; /* Switch grid to stack on narrow viewports */
+                gap: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Semantic HTML5 Component -->
+    <article class="profile-card">
+        <div class="card-header"></div>
+        <div class="card-body">
+            <div class="avatar"></div>
+            <h2 class="user-name">Alex Johnson</h2>
+            <p class="user-role">Front-End Developer</p>
+            
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h4>42</h4>
+                    <p>Projects</p>
+                </div>
+                <div class="stat-item">
+                    <h4>1.2k</h4>
+                    <p>Followers</p>
+                </div>
+                <div class="stat-item">
+                    <h4>89</h4>
+                    <p>Repositories</p>
+                </div>
+            </div>
+        </div>
+    </article>
+
+</body>
+</html>

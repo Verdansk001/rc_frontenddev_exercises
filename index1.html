@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Hotel booking confirmation page</title>
+    <style>
+     @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap');
+     @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap');
+     @import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap');
+
+        
+        body{
+            background:  hsl(41, 100%, 93%);
+            display: flex;
+            width: 100vw;
+            height: auto;
+            
+        }
+        
+        .top-side {
+          display: flex;
+          margin-bottom: 15px;
+
+        }
+        .top-side span{
+            display: block;
+            font-size: 25px;
+        }
+        .fst-name{
+            color: hsl(15, 74%, 41%);
+            font-family: "Fraunces", serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: italic;
+            
+        }
+        .sec-name{
+            font-family: "Fraunces", serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+        }
+        .side-bar{
+            border-right: solid   hsl(32, 44%, 78%) 1px;
+            margin: 10px 45px 0px 10px ;
+            padding-right: 18px;
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+            
+        }
+        .side-bar ul{
+            list-style: none;
+            padding-left: 0px;
+            font-family: "DM Sans", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            margin: 15px 5px 0px 15px;
+            border-top: solid   hsl(32, 44%, 78%) 1px;
+        }   
+        .side-bar li{
+            padding: 5px;
+            margin-top: 5px;
+            color: hsl(33, 17%, 41%) ;
+        }   
+        .side-bar li:hover{
+            padding: 5px 15px ;
+            margin-top: 5px;
+            background-color:white;
+            border-radius: 5px;
+        }
+
+        .side-bar span{
+         vertical-align: top;
+                                         
+        }
+        .notification{
+           color: white;
+           background-color: #c1431d;
+           padding: 3px 9px;
+           border-radius: 50%;
+           position: absolute;
+           right: 20px;
+           font-family: sans-serif;
+        }
+        .stay{
+            position: relative;
+        }
+        .sidebar-footer{
+            margin-top: 500px;
+        }
+        .weather{
+            background-color:hsl(44, 84%, 75%);
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            padding: 20px 0px 20px 20px ;
+            margin: 0px 10px 20px 10px;
+        }
+        .weather-img{
+            position: absolute;
+            right: -35px;
+            top: -35px;
+            width: 120px;
+        }
+        .location{
+            font-family: "DM Mono", monospace;
+            font-weight: 300;
+            font-style: normal;
+            margin: 0px 0px 10px 0px;
+            color: hsl(33, 22%, 20%);
+
+        }
+        .degree{
+            font-family: "Fraunces", serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 50px;
+            margin: 0px 0px 10px 0px;
+        }
+        .weather-type{
+            font-family: "DM Sans", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 300;
+            font-style: thin;
+            margin: 0px;
+            color: hsl(33, 22%, 20%);
+
+        }
+        .about{
+            font-family: "DM Mono", monospace;
+            font-weight: 300;
+            font-style: thin;
+            font-size: 15px;
+            color: hsl(33, 17%, 41%)  ;
+            padding: 20px 10px 0 10px;
+            border-top: solid   hsl(32, 44%, 78%) 1px;
+            
+            
+            
+        }
+        .year-est{
+            margin: 0px;
+        }
+        .hotel-location{
+            margin: 15px 0px;
+        }
+        .copy-right{
+            margin: 0px 0px;
+        }
+        main{
+            position: relative;
+            
+        }
+        .booking{
+            font-family: "DM Mono", monospace;
+            font-weight: 300;
+            font-style: thin;
+            font-size: 15px;
+            color: hsl(33, 17%, 41%)  ;
+        }
+        .fst-namebook{
+            font-family: "Fraunces", serif;
+            font-optical-sizing: auto;
+            font-weight: 00 ;
+            font-style: normal;
+            font-size: 50px;
+        }
+        .sec-namebook{
+            color: hsl(15, 74%, 41%);
+            font-family: "Fraunces", serif;
+            font-optical-sizing: auto;
+            font-weight: 00 ;
+            font-style: italic;
+            font-size: 50px;
+        }
+        .print-btn{
+            font-family: "DM Sans", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 600;
+            font-style: normal;
+            border-radius: 20px;
+            padding: 10px 15px;
+            border: 1px solid   hsl(32, 44%, 78%);
+            background-color:hsl(41, 100%, 93%) ;
+            margin-right: 15px;
+        }
+        .print-btn:hover{
+            font-family: "DM Sans", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 600;
+            font-style: normal;
+            border-radius: 20px;
+            padding: 10px 15px;
+            border: 1px solid   hsl(15, 74%, 41%);
+            background-color:hsl(36, 22%, 86%) ;
+            margin-right: 15px;
+        }
+        .calendar-btn{
+            font-family: "DM Sans", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 600;
+            font-style: normal;
+            border-radius: 20px;
+            padding: 10px 15px;
+            color: hsl(41, 100%, 93%);
+            background-color: hsl(33, 15%, 15%);
+            border: none;
+
+        }
+        .calendar-btn:hover{
+            font-family: "DM Sans", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 600;
+            font-style: normal;
+            border-radius: 20px;
+            padding: 10px 15px;
+            color: hsl(33, 15%, 15%);
+            border: 1px solid   hsl(15, 74%, 41%);
+            background-color: hsl(36, 22%, 86%)
+           
+
+        }
+        
+        .top{
+            display: flex;
+            
+            
+        }
+        
+        .top-btn{
+            position: absolute;
+            top: 20px;
+            right: 0px;
+        }
+        .cards{
+            display: flex;
+            justify-content: center ;
+            width: 1125px;
+            margin: 50px 0 35px 0;
+        }
+        
+        .receipt-card{
+            padding:30px ;
+            width: 400px;
+            background-color: hsl(0, 0%, 100%);
+            border-radius: 16px;
+            box-shadow: 10px 10px 20px rgba(40, 20, 0, 0.3);
+            transform: rotate(-2deg) translate(15px);
+            z-index: 1;
+        }
+        .receipt-header{
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .receipt-text{
+            font-family: "DM Mono", monospace;
+            font-weight: 300;
+            font-style: thin;
+            font-size: 13px;
+            color: hsl(33, 17%, 41%)  ;
+        }
+        .stay-text{
+            font-family: "Fraunces", serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 25px;
+            margin: 6px 0 15px 0;
+        }
+        .receipt-top{
+            border-bottom: 1px solid   hsl(30, 24%, 93%);
+        }
+        .date-sec{
+            display: flex;
+            justify-content: space-between;
+            padding: 25px 25px;
+            text-align: center;
+            border-bottom:1px solid   hsl(30, 24%, 93%) ;
+            
+           
+    
+        }
+        .date{
+            font-family: "Fraunces", serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 40px;
+            margin: 4px 5px;
+        }
+        .day{
+            font-size: 18px;
+            color: hsl(32, 20%, 29%);
+        }
+        .receipt-details{
+            list-style: none;
+            padding: 16px 0px;
+            margin: 0px;
+            font-family: "DM Sans", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 500;
+            font-style: normal;
+            border-bottom:1px solid    hsl(33, 22%, 20%) ;
+            
+            
+        }
+        .receipt-details li{
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        .receipt-price{
+            font-family: "DM Mono", monospace;
+           
+        }
+        .total-sec{
+            display: flex;
+            justify-content: space-between;
+            padding: 16px 0px ;
+        }
+        .total-text{
+            font-family: "DM Mono", monospace;
+            font-weight: 300;
+            font-style: thin;
+            font-size: 15px;
+            margin: 10px 0;
+            color: hsl(33, 17%, 41%);
+        }
+        .total-amount{
+            font-family: "Fraunces", serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            margin: 0px;
+           
+            
+        }
+
+        .receipt-footer{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+        .footer-text{
+            font-family: "DM Mono", monospace;
+            font-weight: 300;
+            font-style: thin;
+            font-size: 13px;
+            color: hsl(33, 17%, 41%);
+            margin-top: 10px;
+  
+        }
+        .receipt-footer img{
+            width: 125px;
+
+        }
+        .welcome-card{
+            padding:30px ;
+            width: 400px;
+            background: linear-gradient(135deg, hsl(15, 74%, 41%) 0% , hsl(22, 72%, 56%) 100%);
+            border-radius: 16px;
+            box-shadow: 10px 10px 20px rgba(40, 20, 0, 0.3);
+            transform: rotate(2deg) translatex(-15px);
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+
+
+        }
+        .welcome-header{
+            display: flex;
+            justify-content: space-between;
+             border-top: 1px dashed  hsl(32, 44%, 78%);
+  
+        }
+        .welcome-header p{
+            font-family: "DM Mono", monospace;
+            font-weight: 300;
+            font-style: thin;
+            font-size: 13px;
+            color: hsl(36, 22%, 86%) ;
+        }
+        .welcome-header img{
+            margin-top: 20px;
+        }
+        .welcome-body{
+            margin: 40px 0px 0px 0px;
+   
+        }
+       
+        
+        .host-header{
+            font-family: "Fraunces", serif;
+            font-style: italic;
+            color: hsl(42, 83%, 58%);
+            font-size: 24px;
+            margin-bottom: 7px;
+            
+        }
+        .host-name{
+            font-family: "Fraunces", serif;
+            font-style: italic;
+            font-weight: 500;
+            color:hsl(36, 22%, 86%) ;
+            margin-top: 0 ;
+            font-size: 45px;
+        }
+        .host-text{
+            color:hsl(36, 22%, 86%) ;
+            font-size: 16px;
+            line-height: 1.3;
+            font-family: "DM Sans", sans-serif;
+        }
+         .welcome-footer{
+           margin-top: auto;
+         }
+        .room-text{
+            font-family: "DM Mono", monospace;
+            font-weight: 300;
+            font-style: thin;
+            font-size: 13px;
+            color: hsl(36, 22%, 86%) ;
+            margin: 0;
+            
+           
+        }
+        .room-name{
+            color:hsl(36, 22%, 86%) ;
+            margin: 0;
+            
+            
+        }
+        .hover-text{
+            font-family: "DM Mono", monospace;
+            font-weight: 300;
+            font-style: normal;
+            font-size: 15px;
+            color: hsl(33, 17%, 41%)  ;
+            text-align: center;
+            margin: 0;
+            
+            
+        }
+        .footer{
+           display: flex;
+           justify-content: space-between;
+        }
+        .footer-card{
+            width: 330px;
+            background-color:hsl(0, 0%, 100%) ;
+            border-radius: 15px;
+            padding: 15px;
+        }
+        .card-header{
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            
+            
+        }
+        .key-img{
+            background-color: hsl(15, 74%, 41%);
+            padding: 13px;
+            border-radius: 10px;
+            margin-right: 5px;
+           
+           
+            
+        }
+        .arrival-text{
+            color: hsl(15, 74%, 41%);
+            position: absolute;
+            top: 15px;
+            font-family: "DM Mono", monospace;
+            font-weight: 400;
+            font-style: thin;
+            font-size: 18px;
+        }
+        .card-num1 {
+            font-family: "Fraunces", serif;
+            font-weight: 400;
+            font-style: thin ;
+            color: hsl(15, 74%, 41%);
+        }
+
+        .wifi-img{
+            background-color: hsl(230, 49%, 56%);
+            padding: 13px;
+            border-radius: 10px;
+            margin-right: 5px;
+           
+           
+            
+        }
+        .wifi-text{
+            color: hsl(230, 49%, 56%);
+            position: absolute;
+            top: 15px;
+            font-family: "DM Mono", monospace;
+            font-weight: 400;
+            font-style: thin;
+            font-size: 18px;
+        }
+        .card-num2 {
+            font-family: "Fraunces", serif;
+            font-weight: 400;
+            font-style: thin ;
+            color: hsl(230, 49%, 56%);
+        }
+        .breakfast-img{
+            background-color: hsl(340, 48%, 52%);
+            padding: 13px;
+            border-radius: 10px;
+            margin-right: 5px;
+           
+           
+            
+        }
+        .breakfast-text{
+            color: hsl(340, 48%, 52%);
+            position: absolute;
+            top: 15px;
+            font-family: "DM Mono", monospace;
+            font-weight: 400;
+            font-style: thin;
+            font-size: 18px;
+        }
+        .card-num3 {
+            font-family: "Fraunces", serif;
+            font-weight: 400;
+            font-style: thin ;
+            color: hsl(340, 48%, 52%);
+        }
+        .card-detail h2{
+            font-family: "Fraunces", serif;
+            font-weight: 400;
+            font-style: thin;
+            font-size: 28px;
+        }
+        .card-detail p{
+            color: hsl(33, 17%, 41%);
+            font-family: "DM Sans", sans-serif;
+            
+        }
+        .card-desc{
+            font-family: "DM Sans", sans-serif; 
+        }
+
+        .wifi-row{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: hsl(30, 24%, 93%);
+            margin-top: 7px;
+            padding: 10px;
+            border-radius: 7px;
+            
+        }
+        .wifi-label{
+            font-family: "DM Mono", monospace;
+            letter-spacing: 1.0px;
+            color: hsl(33, 17%, 41%);
+        }
+        .wifi-value{
+            font-family: "DM Sans", sans-serif;
+            font-weight: 500;
+        }
+        .copy-btn{
+            color: hsl(33, 17%, 41%);
+            padding: 2px 5px;
+            font-size: 15px;
+            background-color: hsl(35, 60%, 96%);
+            border-radius: 4px;
+            border: none;
+        }
+        
+    
+
+
+    </style>
+</head>
+<body>
+    
+      <aside class="side-bar">
+          <div class="top-side">
+             <img src="images/icon-sun.svg" alt="">
+              <div class="hotel-name">
+                <span class="fst-name"  >Maison</span>
+                <span class="sec-name">Soleli</span>
+              </div>
+          </div>
+
+          <ul>
+             <li class="stay">
+                <img src="images/icon-bed.svg" alt="" class="side-icon">
+                <span> Your stay </span>
+                <span class="notification">1</span>
+             </li>
+
+             <li>
+                <img src="images/icon-house.svg" alt="">
+                <span>The house</span>
+             </li>
+
+             <li>
+                <img src="images/icon-pin.svg" alt="">
+                <span>About town</span>
+             </li>
+
+             <li>
+                <img src="images/icon-breakfast-outline.svg" alt="">
+                <span>Breakfast</span>
+             </li>
+
+             <li>
+                <img src="images/icon-mail.svg" alt="">
+                <span>Messages</span>
+             </li>
+          </ul>
+
+        <div class="sidebar-footer">
+          <div class="weather">
+             <img src="images/icon-weather.svg" alt="" class="weather-img">
+             <p class="location">TODAY IN CASSIS</p>
+             <H1 class="degree">27&deg;</H1>
+             <p class="weather-type">Sunny &middot; light breeze </p>
+          </div>
+
+          <div class="about">
+                <p class="year-est"> EST. 1987</p>
+                <p class="hotel-location">MAISON SOLEIL · 12 RUE DES OLIVIERS · CASSIS</p>
+                <p class="copy-right">© 2026 MAISON SOLEIL</p>
+         </div>
+        </div>
+
+      </aside>
+
+      <main>
+        <div class="top">
+            <div class="top-header">
+                <p class="booking">BOOKING · CONFIRMED </p>
+                <span class="fst-namebook">Bienvenue,</span>
+                <span class="sec-namebook">Lucia.</span>
+            </div>
+
+            <div class="top-btn">
+                <button class="print-btn">Print receipt</button>
+                <button class="calendar-btn">Add to calendar</button>
+            </div>
+        </div>
+
+        <div class="cards">
+            <div class="receipt-card">
+                <div class="receipt-top">
+                    <div class="receipt-header">
+                    <span class="receipt-text">RECEIPT</span>
+                    <span class="receipt-text" > № MS-2026
+                            0421-AH
+                    </span>
+                   </div>
+                    <h3 class="stay-text" >Your stay</h3>
+                </div>
+
+                <div class="date-sec">
+                    <div class="date-block">
+                        <span class="receipt-text">CHECK IN</span>
+                        <h1 class="date">25 Apr</h1>
+                        <span class="day">Saturday · 15:00</span>
+                    </div>
+                    <div class="date-block">
+                        <span class="receipt-text">CHECK OUT</span>
+                        <h1 class="date">29 Apr</h1>
+                        <span class="day">Wednesday· 11:00</span>
+                    </div>
+                
+
+                </div>
+                <div>
+                    <ul class="receipt-details">
+                        <li><span > Room · La Garrigue &times; 4 nights</span><span class="receipt-price"> € 620.00</span></li>
+                        <li><span > Breakfast &times; 2 guests</span><span class="receipt-price">€ 96.00</span></li>
+                        <li><span style="color: hsl(33, 22%, 20%);">Tourist tax</span><span style="color: hsl(33, 22%, 20%);" class="receipt-price"> € 14.40</span></li>
+                    </ul>
+                </div>
+                <div class="receipt-bottom">
+                    <div class="total-sec">
+                        <p class="total-text">TOTAL PAID</p>
+                        <h1 class="total-amount">€ 730.40</h1>
+                    </div>
+                    <div class="receipt-footer">
+                        <span class="footer-text"> PAID · WISE · GBP</span>
+                        <img src="images/icon-barcode.svg" alt="">
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="welcome-card">
+                <div class="welcome-header">
+                    <p>WELCOME CARD</p>
+                    <img src="images/icon-sun.svg" alt="">
+                </div>
+                <div class="welcome-body">
+                    <p class="host-header">A note from your host,</p>
+                    <h1 class="host-name">Margaux.</h1>
+                    <p class="host-text">We're so glad you're coming. The shutters will be open, the lemonade cold, and the cat- Poivre - pretending not to notice you.</p>
+                </div>
+                <div class="welcome-footer">
+                    <p class="room-text">ROOM</p>
+                     <h2 class="room-name">La Garrigue</h2>
+                </div>
+                
+
+            </div>
+           
+        </div>
+        <div class="hover-text">
+                <p>HOVER TO FAN</p>
+        </div>
+
+        <div class="footer">
+            <div class="footer-card">
+                <div class="card-header">
+                    <div>
+                            <img src="images/icon-key.svg" alt="" class="key-img">
+                            <span class="arrival-text">ARRIVAL</span>
+                    </div>
+                    <div > <h2 class="card-num1"> 01</h2></div>
+                </div>
+                <div class="card-detail">
+                    <h2>Check-in from 15:00</h2>
+                    <p>Sat, 25 April</p>
+                </div>
+                <div class="card-desc">
+                    <p>Ring the brass bell by the blue
+                    door. If we're at the market, the
+                    key is in the terracotta pot by the olive tree.</p>
+                </div>
+            </div>
+
+
+
+            <div class="footer-card">
+                <div class="card-header">
+                    <div>
+                            <img src="images/icon-wifi.svg" alt="" class="wifi-img">
+                            <span class="wifi-text">WIFI</span>
+                    </div>
+                    <div> <h2 class="card-num2"> 02</h2></div>
+                </div>
+                <div class="card-detail">
+                    <h2> Le Soleil · Guest</h2>
+                    <p>Password below</p>
+                </div>
+                <div class="wifi-details">
+                    <div class="wifi-row">
+                        <span class="wifi-label">NETWORK</span>
+                        <span class="wifi-value">Le Soleil · Guest</span>
+                    </div>
+                    <div class="wifi-row">
+                         <span class="wifi-label">PASSWORD</span>
+                         <div>
+                            <span class="wifi-value">soleil-2026</span>
+                            <button class="copy-btn">COPY</button>
+                         </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="footer-card">
+                <div class="card-header">
+                    <div >
+                            <img src="images/icon-breakfast.svg" alt="" class="breakfast-img">
+                            <span class="breakfast-text">BREAKFAST</span>
+                    </div>
+                    <div> <h2 class="card-num3"> 03</h2></div>
+                </div>
+                <div class="card-detail">
+                    <h2>Served 8 - 10:30</h2>
+                    <p>On the terrace</p>
+                </div>
+                <div class="card-desc">
+                    <p>  
+                        Fresh figs, Marseille honey, pain au levain,
+                         and espresso. Gluten-free option? Leave a
+                         note the night before.
+                    </p>
+                </div>
+            </div>
+        </div>
+      </main>
+
+      
+</body>
+</html>
