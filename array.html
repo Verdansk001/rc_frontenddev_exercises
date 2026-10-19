@@ -4,29 +4,83 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        
+        body{
+            background-color: #e06b79;
+            font-family:  'Lucida Sans Regular', 'Lucida Grande', Geneva, Verdana, sans-serif;
+        
+        }
+         .tweet{
+            width: 500px;
+           margin: 50px auto;
+           background-color: #800010;
+           padding: 25px;
+           border-radius: 15px;
+
+           
+         }
+         h1{
+            color: #f5f5f5;
+         }
+         .tweet-input{
+            width: 100%;
+            height: 100px;
+            font-size: 16px;
+            border-radius: 10px;
+         }
+       .post-btn{
+            margin: 25px 0 25px 0;
+            padding: 8px 25px;
+            border-radius: 20px;
+            background-color: #1d9bf0;
+            color: #f5f5f5;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: 550;
+            letter-spacing: 0.5px;
+       }
+       .post-btn:hover{
+            background-color: #90d2fd;
+       }
+       .tweetdisplay{
+        border-top: 1px solid #e06b79;
+        padding-top: 15px;
+        background-color: #e06b79;
+        
+        border-radius: 10px;
+        color: #f5f5f5;
+       }
+      
+    </style>
 </head>
+<body>
+    <div  class="tweet">
+    <div>
+        <h1>Tweet Composer</h1>
+    </div>
+    
+    <div class="tweet-sec">
+        <input type="text" placeholder="enter tweet" id="tweetInput" class="tweet-input">
+        <button class="post-btn" id="postBtn"> Post</button>
+    </div>
+    <div class="tweetdisplay">
+        <p id="displayTweet" ></p>
+    </div>
+   
+    </div>
 
-<body> 
-    <button>hello</button>
-    <button class="js-button">second button</button></button>
+
     <script>
-        console.log(document.querySelector('button')).inne
- 
+    var tweets = [];
 
-        const buttonElement = document.querySelector('.js-button'); 
-        const allButtons = document.querySelectorAll('button').innerHTML;
-        
-        console.log(document.title);
-        document.title= "kardi"
+    document.getElementById('postBtn').onclick = function tweetfetcher() {
+         
+        var tweet = document.getElementById('tweetInput').value;
+        tweets.push(tweet)
 
-        console.log(document.body);  
-        console.log(typeof document.body)
-
-        console.log(document.body.innerHTML)
-        document.body.innerHTML = '<button> good girl <button/>' 
-        
-        document.body.innerHTML='hello';
-        document.title ='good job'
+        document.getElementById('displayTweet').innerHTML = tweets.join("<br><br>");
+    }
     </script>
 </body>
 </html>

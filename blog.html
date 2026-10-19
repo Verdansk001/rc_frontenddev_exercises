@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mindful Pages</title>
+
+    <style>  
+       @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+       @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap'); 
+       @import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+       
+       *{
+        padding: 0;
+        margin: 0;
+       }
+    
+       header{
+        display: flex;
+        justify-content: space-between;
+        padding: 15px 55px;
+       }
+       .logo {
+        width: 30px;
+       }
+       .blog-name{
+        font-family: Caveat;
+        font-weight: 600;
+        font-size: 35px;
+        
+        
+       }
+       .nav-links {
+        display: flex;
+        justify-content: space-evenly;
+        list-style: none;
+        gap: 75px;
+        margin-top: 10px;
+        padding: 0;
+       
+       }
+       .nav-links a{
+        text-decoration: none;
+        font-family: Inter ;
+        font-weight: 400;
+        font-size: 15px;
+        color:#686868 ;
+        vertical-align: baseline;
+       }
+       .nav-links a:hover{
+        color: black;
+        border-bottom: solid 3px #D99A19;
+        padding-bottom: 10px;
+       }
+       .search-img{
+        margin-top: 7px;
+       }
+       header button {
+        vertical-align: top;
+        background-color: #D99A19;
+        padding: 10px 20px;
+        color: white;
+        border-radius: 20px;
+        border: none;
+        font-family: inter;
+        font-weight: 400;
+        font-size: 15px;
+        margin-left: 20px;
+        cursor: pointer;
+        transition: 0.1s;
+       }
+       header button:hover {
+        color: #D99A19;
+        background-color: white;
+        border: #D99A19 solid 2px;
+       }
+       main {
+        display: flex;
+        justify-content: space-between;
+        background-color: #F8F5F0;
+       }
+       
+       .main-text{
+       padding: 80px 0px 55px 55px;
+       }
+        .main-text h3 {
+            color: #D99A19;
+            margin-bottom: 15px;
+            font-family: inter;
+            font-weight: 500;
+
+        }
+        .main-text h1{
+            font-family: playfair display;
+            font-weight: 700;
+            font-size: 65px;
+            font-style: semibold;
+            
+            
+        }
+        .main-text p {
+            font-family: inter;
+            font-weight: 400;
+            font-size: 17px;
+            color: #686868;
+            margin: 25px 0px;
+        }
+
+        .main-text button {
+            padding: 10px 20px;
+            background-color: #D99A19;
+            border-radius: 25px;
+            border: none;
+            font-family: inter;
+            font-weight: 600;
+            font-size: 15px;
+            cursor: pointer;
+        }
+        .main-text button:hover{
+        
+             color: #D99A19;
+        background-color: white;
+        border: black solid 2px;
+        transition: 0.2s;
+
+        }
+        .article-arrow{
+            margin-left:10px;
+            width: 15px;
+        }
+        main img {
+            width: 700px;
+            clip-path: polygon(18% 0, 100% 0, 100% 100%, 0 100%);
+        }
+        article{
+             padding: 50px 55px;
+        }
+        .article-header{
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+        .article-header h3{
+            font-family: playfair display;
+            font-weight: bolder;
+            font-size: 25px;
+        }
+        .article-header p{
+            color: #868686;
+            font-family: inter;
+        }
+        .article-header p:hover{
+            color: black;
+            cursor: pointer;
+        }
+        .article-sec{
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .article-sec img{
+            width: 430px;
+            height: 300px;
+            border-radius: 5px;
+        }
+        .article-title{
+            font-family: inter;
+            font-weight: 400;
+            font-size: 14px;
+            margin: 15px 10px;
+            padding: 5px 15px;
+            display: inline-block;
+            border-radius: 15px;
+        }
+        .article-topic{
+            font-size: 25px;
+            font-family:inter ;
+            font-weight: 600;
+            width: 350px;
+            margin-bottom:15px ;
+        }
+        .article-body{
+            color: #686868;
+            font-family: inter;
+            font-weight: 400;
+            width: 30px;
+            
+
+        }
+        .article-auth{
+            color: #686868;
+            font-family: inter;
+            font-weight: 400;
+            margin-top: 20px;
+        }
+        .category-sec{
+             padding: 20px 55px;
+             background-color: #F8F5F0;
+        }
+        .category-title{
+            font-family: playfair display;
+            font-weight: 700;
+            font-size: 25px;
+            margin-bottom: 30px;
+        }
+        .categories{
+            font-family: inter;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-evenly;
+            list-style: none;
+            gap: 150px;
+        }
+        .categories img{
+            margin-left: 15px;
+            margin-bottom: 15px;
+            padding: 12px;
+            border-radius: 25px;
+        }
+        .join-commu{
+            padding:  40px 55px ;
+            display: flex;
+            justify-content: space-between;
+        }
+        .join-commu img{
+            width: 300px;
+        }
+        .join-text{
+            margin-right: 200px;
+            margin-top: 20px;
+        }
+        .join-title{
+           font-family: inter;
+           font-weight: 700;
+           font-size: 15px;
+           color: #D99A19;
+           margin-bottom: 12px;
+        }
+        .join-header{
+           font-family: playfair display;
+           font-weight: 700;
+           font-size: 33px;
+           width: 450px;
+           margin-bottom: 12px;
+        }
+        .join-body{
+          font-family: inter;
+          font-weight: 400;
+          color: #686868;
+        }
+        .email-input{
+           padding: 10px 20px ; 
+           border-radius: 20px;
+           border: solid 1px #686868;
+           width: 300px;
+           font-family: inter;
+           font-weight: 400;
+        }
+        .sub-btn{
+            vertical-align: top;
+            background-color: #D99A19;
+            padding: 10px 20px;
+            color: white;
+            border-radius: 20px;
+            border: none;
+            font-family: inter;
+            font-weight: 400;
+            font-size: 15px;
+            margin-left: -35px;
+            cursor: pointer;
+            transition: 0.1s;
+            
+            
+        }
+        .sub-btn:hover{
+            color: #D99A19;
+            background-color: white;
+            border: #D99A19 solid 2px;
+
+        }
+        .join-input{
+            margin-top: 100px;
+        }
+        footer{
+            background-color: #17191c;
+            padding: 20px 55px;
+        }
+        .footerblog-name{
+            font-family: Caveat;
+            font-weight: 600;
+            font-size: 28px;
+            color: white;
+            margin: 20px 0px;
+        }
+        footer p {
+            font-family: inter;
+            font-weight: 400;
+            color: white;
+            font-size: 15px;
+            margin-top: 20px 0px;
+
+        }
+        footer span{
+            font-family: inter;
+            font-weight: 400;
+            color: white;
+            font-size: 15px;
+            margin-top: 20px 0px;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+        <img src="blog images/golden leaf.png" alt="" class="logo">
+        <span class="blog-name">Mindful Pages</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="">Home</a></li>
+            <li><a href="">Articles</a></li>
+            <li><a href="">Categories</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Contact</a></li>
+        </ul>
+        <div>
+        <img src="blog images/search.png" alt="" class="search-img">
+        <button >Subscribe</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="main-text">
+            <h3>THE BLOG</h3>
+            <h1>Better Ideas. </h1> <h1>A Brighter You.</h1> 
+            <p>Fresh perspectives, practical tips and inspiring stories for a more intentional life.</p>
+            <button> Explore Articles <img src="blog images/arrow-right.png" alt="" class="article-arrow"></button>
+        </div>
+        <div>
+            <img src="blog images/reading table.avif" alt="">
+        </div>
+    </main>
+
+    <article>
+        <div class="article-header">
+            <div>
+                 <h3>Latest Posts</h3>
+            </div>
+            <div>
+                 <p class="all-articles">View all articles <img src="blog images/arrow-right.png" alt="" ></p>
+            </div>
+        </div>
+        <div class="article-sec">
+            <div>
+                <img src="blog images/productivity.avif" alt="">
+                <p class="article-title" style="color: #76500b; background-color: #fff0c2;">Productivity</p>
+                <h4 class="article-topic">5 Simple Habits to Boost Your Productivity</h4>
+                <span class="article-body">Small changes can make a big difference.
+                    Here are 5 easy habits to help you get more done, without the stress.
+                </span>
+                <div>
+                    
+                    <p class="article-auth">By Khadijat Ajayi  Apr 26, 2026</p> 
+                </div>
+                
+            </div>                                                                                                              
+            <div>
+                <img src="blog images/wellness3.jpg" alt="">
+                <p class="article-title" style="color: #285a3d; background-color: #dcefe0;">Wellness</p>
+                <h4 class="article-topic">The Power of a Healthy Mindset</h4>
+                <span  class="article-body">Your mindset shapes your reality. Learn how to build
+                      a positive outlook and handle life's challenges with grace.
+                </span>
+                <div>
+                    <p class="article-auth">By Folashade Adeyemi  June 26, 2026</p>
+                    
+                </div>
+            </div>
+            <div>
+                <img src="blog images/food.avif" alt="">
+                <p class="article-title" style="color: #913f51; background-color: #fbe0e4;">Lifestyle</p>
+                <h4 class="article-topic">Easy & Healthy Meal Ideas for Busy Days</h4>
+                <span  class="article-body">Nutritious doesn't have to be complicated.
+                    Try these quick and delicious meal ideas for your everyday routine.
+                </span>
+                <div>
+                    <p  class="article-auth">By vivian Ayeni March 26, 2026</p>
+                    
+                </div>
+            </div>
+        </div>
+    </article>
+    
+    <div class="category-sec">
+        <h3 class="category-title">Browse by Category</h3>
+        <ul class="categories">
+            <li>
+                <p><img src="blog images/sun.png" alt="" style="background-color: #fff0c2;" ></p>
+                Productivity
+            </li>
+            <li>
+                <p><img src="blog images/leaf.png" alt=""  style="background-color: #cfe7d3;"></p>
+                Wellness
+            </li>
+            <li>
+                <p><img src="blog images/heart.png" alt=""  style="background-color: #f9ccd3;"></p>
+                Lifestyle
+            </li>
+            <li>
+                <p><img src="blog images/utensils(1).png" alt=""  style="background-color: #e5dafa;"></p>
+                Food & Drink
+            </li>
+            <li>
+                <p><img src="blog images/plane.png" alt=""  style="background-color: #cfe4fb;"></p>
+                Travel
+            </li>
+            <li>
+                <p><img src="blog images/user.png" alt="" style="background-color: #8a4c28;"></p>
+                Personal Growth
+            </li>
+        </ul>
+    </div>
+
+    <div class="join-commu">
+        <div >
+            <img src="blog images/plant.avif" alt="">
+        </div>
+        <div class="join-text">
+            <p class="join-title">STAY IN THE LOOP</p>
+            <h3 class="join-header">Get the latest posts straight to your inbox.</h3>
+            <span class="join-body">Join our community and never miss a new article.</span>
+        </div>
+        <div class="join-input">
+            <input type="text"  class="email-input" placeholder="Enter your email address"> 
+            <button class="sub-btn"> Subscribe </button>
+        </div>
+
+    </div>
+
+    <footer>
+        <div>
+            <div>
+                <h3 class="footerblog-name"><img src="blog images/golden leaf.png" alt="" class="logo" >Mindful Pages</h3>
+                <p>Thoughtful articles for a kinder, healthier and more intentional life.</p>
+            </div>
+            <div class="socials-icon">
+
+            </div>
+        </div>
+        <div>
+            <div> 
+             <span> 2026 Mindful Pages. All rights reserved.</span>
+            </div>
+            <div>
+                <span> Privacy Policy | Terms of Service</span>
+            </div>
+        </div>
+    </footer>
+     
+</body>
+</html>

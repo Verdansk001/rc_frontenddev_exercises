@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        header{
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 90px;
+            border-bottom: solid 1px #f4f4f4;
+        }
+        header img{
+            width: 60px;
+        }
+        header ul {
+            display: flex;
+            justify-content: space-evenly;
+            list-style: none;
+            gap: 50px;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        header a {
+            text-decoration: none;
+            color: black;
+        }
+        header li:hover{
+            padding-bottom: 5px;
+            border-bottom: solid black 3px;
+        
+        }
+        main{
+            padding: 70px 90px ;
+            display: flex;
+            justify-content: space-between;
+        }
+        .main-header {
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: 2px;
+        }
+        main h1{
+            font-size: 85px;
+            letter-spacing: -3.4px;
+            margin-top: 0px;
+            margin-bottom: 20px;
+            
+        }
+        main img{
+            width: 600px;
+        }
+        .main-desc {
+            color: #666666;
+            font-size: 19px;
+            line-height: 1.7;
+            width: 600px;
+            margin-bottom: 35px;
+        
+        }
+        .view-btn{
+            padding: 18px 22px;
+            color: white;
+            font-size: 17px;
+            font-weight: 600;
+            background-color: black;
+        }
+        .view-btn:hover{
+            padding: 18px 22px;
+            color: black;
+            font-size: 17px;
+            font-weight: 600;
+            background-color: white;
+            border: solid 1px black;
+            cursor: pointer;
+
+        }
+        .connect-btn{
+            padding: 18px 22px;
+            color: black;
+            font-size: 17px;
+            font-weight: 600;
+            background-color: white;
+            border: solid 1px black;
+            margin-left: 12px;
+        }
+        .connect-btn:hover{
+            padding: 18px 22px;
+            color: white;
+            font-size: 17px;
+            font-weight: 600;
+            background-color: black;
+            cursor: pointer;
+        }
+        .section-headers h3{
+            color: #666666;
+            font-size: 20px;
+        }
+        .section-headers h1{
+            font-size: 45px;
+            width: 400px;
+            margin-bottom: 50px;
+            
+        }
+        article {
+            display: flex;
+            justify-content: space-between;
+            padding: 80px 90px;
+            background-color:#f4f4f4 ;
+        }
+        article p{
+            width: 700px ;
+            color: #666666;
+            font-size: 19px;
+            line-height: 1.7;
+        }
+        .skill-sec {
+            
+            padding: 80px 90px;
+        
+        }
+        .skill-header{
+            display: flex;
+            justify-content: space-between;
+        }
+        .skill-header p{
+            color: #666666;
+            font-size: 18px;
+            width: 500px;
+            margin-top: 80px;
+        }
+        .skills{
+            display: flex;
+            justify-content: space-evenly;
+           
+        }
+        .skill-card{
+            border: 1px solid #666666;
+            padding: 15px 45px;
+        }
+        .skill-card h4{
+            color: #666666;
+            font-size: 20px;
+            font-size: 100;
+        }
+        .skill-card h2{
+            font-size: 23px;
+        }
+        .skill-card p {
+            color: #666666;
+        }
+        .project-sec{
+            padding: 80px 90px;
+            background-color: #f4f4f4;
+        }
+        .project-header{
+            display: flex;
+            justify-content: space-between;
+        }
+        .project-header p{
+             color: #666666;
+            font-size: 18px;
+            width: 500px;
+            margin-top: 80px;
+        }
+        .project{
+            display: flex;
+            justify-content: space-evenly; 
+         
+        }
+        .project img{
+            width: 340px;
+        }
+        .project p{
+            width: 300px;
+            color: #666666;
+        }
+        .project span {
+            display: block;
+            font-size: 12px;
+            color: #666666;
+            width: 350;
+            letter-spacing: 2px;
+            margin: 35px 0;
+        }
+        .project h2{
+            font-size: 25px;
+        }
+        .project-card{
+               border:  1px solid #666666;
+               padding: 15px 35px;
+        }
+        .project-card a {
+            text-decoration: none;
+            padding: 5px 10px;
+            color: white;
+            background-color: black;
+            border-radius: 20px;
+        }
+        .contact-sec{
+            display: flex;
+            justify-content: space-between;
+            padding: 80px 90px;
+
+
+        }
+        .contact-desc p{
+            color: #666666;
+            width: 550px;
+            font-size: 18px;
+            line-height: 1.7;
+        }
+        .email-sec p{
+            font-size: 12px;
+            color: #666666;
+            width: 350;
+            letter-spacing: 2px;
+        }
+        .email-sec h2{
+            font-size: 35px;
+        }
+        footer{
+            background-color: #666666;
+            padding: 30px 90px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 15px;
+            
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <img src="ajayi_khadijat_AK_icon.png" alt=""> 
+        </div>
+        
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact Me</a></li>
+            </ul>
+        
+       
+    </header>
+    <main id="home">
+         <div>
+            <p class="main-header">WEB DEVELOPER</p>
+            <h1>Hello, I'm Khadijat. I build for the web.</h1>
+            <p class="main-desc">Creating clean, thoughtful digital experiences.. I'm learning to build simple, user-friendly websites with Html,Css and Javacripts. This portfolio is where i share my progress  and project</p>
+            <button class="view-btn">View my work</button>
+            <button class="connect-btn">Let's connect</button>
+        </div>
+        <div>
+            <img src="ajayi_khadijat_AK_hero.svg" alt="">
+        </div>
+        
+    </main>
+
+    <article id="about">
+        <div class="section-headers">
+            <h3>01 / ABOUT ME</h3>
+            <H1>A little about what i do.</H1>
+        </div>
+        <div>
+            <p>I’m an aspiring web designer and developer who values 
+                clarity, simplicity, and thoughtful details. I’m building
+                 my skills one project at a time, learning how design and
+                code work together to create useful online experiences.
+                This portfolio is a place to share my progress and 
+                future work.
+            </p>
+        </div>
+    </article>
+
+    <section id="skills" class="skill-sec" >
+        <div class="skill-header" >
+            <div class="section-headers">
+                <h3>02 / WHAT I USE</h3> 
+                <h1>My skills</h1>
+       
+            </div>
+            <div>
+                <p>The foundatins I'm currently learning and using to biuld websites</p>
+            </div>
+        </div>
+        <div class="skills">
+            <div class="skill-card">
+                <h4>01</h4>
+                <h2>HTML</h2>
+                <p>Structuring clear, accessible web pages.</p>
+            </div>
+             <div class="skill-card">
+                <h4>02</h4>
+                <h2>CSS</h2>
+                <p>Creating layouts,styles and beautiful designs.</p>
+            </div>
+             <div class="skill-card">
+                <h4>03</h4>
+                <h2>JavaScript</h2>
+                <p> Learning the basics of interactivity for websites.</p>
+            </div>
+        </div>
+    </section>
+
+    <section  class="project-sec" id="projects">
+        <div class="project-header">
+            <div class="section-headers">
+                 <h3>03 / SELECTED WORK</h3> 
+                <h1>Projects & practice</h1>
+            </div>
+            <div>
+                <p> These are the projects i have done showcasing  
+                    html , css and javascript skills  and concept I have practiced
+                </p>
+            </div>
+        </div>
+        <div class="project">
+            <div class="project-card">
+                <img src="blog.png" alt="">
+                <span>PRACTICE PROJECT /01</span>
+                <h2>Personal Portfolio</h2>
+                <a href="blog.html">View</a>
+                <p> A simple website introducing me and my skills.</p>
+            </div>
+             <div class="project-card">
+                <img src="tweet.png" alt="">
+                <span>PRACTICE PROJECT /02</span>
+                <h2>Simple JavaScript Project</h2>
+                <a href="array.html">view</a>
+                <p> A tweet composer website built using the mechanics of arrays in javascript </p>
+            </div>
+             <div class="project-card">
+                <img src="hotel website.png" alt="">
+                <span>PRACTICE PROJECT /03</span>
+                <h2>Landing Page</h2>
+                <a href="hotel.html">view</a>
+                <p> A clean page layout and landing page for  hotel booking. </p>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="contact-sec" id="contact">
+            <div class="contact-desc">
+                 <h3>04 / GET IN TOUCH</h3> 
+                <h1>Have a project in mind?</h1>
+            
+                <p> I’m open to learning opportunities, collaborations, and beginner-friendly
+                     projects. Feel free to reach out.
+                 </p>
+            </div>
+            <div class="email-sec">
+                <p>EMAIL ME</p>
+                <h2>ajayikhadijat@gmail.com</h2>
+            </div>
+    </section>
+
+    <footer>
+      <P> AK. Ajayi Khadijat</P>
+      <span>© 2026 All rights reserved.</span>
+    </footer>
+</body>
+</html>

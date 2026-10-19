@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       body{
+        margin: 0;
+        padding: 0;
+        height: 100%;
+       }
+       header {
+        border-bottom: solid gray 1px ;
+       }
+       header h2 {
+        margin-left: 5px;
+        font-size: 25px;
+       }
+
+       main{
+        text-align: center;
+        margin: 150px auto;
+       }
+       img {
+        width: 300px;
+        cursor: pointer;
+        border-radius: 300px;
+       }
+
+       footer{
+        text-align:center ;
+        border-top: 1px solid gray;
+        padding: 10px 0;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+
+       }
+    </style>
+</head>
+<body>
+   <header id="header">
+    <h2 class="header-title">Vertex</h2>
+   </header>
+
+   <main >
+     <h1>Light & Dark Mode</h1>
+     <p>Toggle thr button to switch between light and dark themes.</p>
+     <img src="image_e1fc10d9.jpg" alt="" id="img">
+     <button id="btn">reset</button>
+   </main>
+
+   <footer id="footer">
+    <p>2026 Vertex .All rights reserved</p>
+   </footer>
+
+   <script>
+    let image = "image_d923034b.jpg"
+    let light ='image_e1fc10d9.jpg';
+    document.getElementById('img').onclick = function changeMode() {
+        document.getElementById('header').style.cssText = "background: black; color: white;"
+        document.getElementById('img').src = image
+        document.getElementById('footer').style.cssText = "background: black; color: white;"
+        console.log(image)
+
+        var isDark = true;
+        } 
+  
+   
+            document.getElementById('btn').onclick = function resetMode() {
+                document.getElementById('header').style.cssText = "background: white; color: black;"
+                document.getElementById('img').src = light;
+                document.getElementById('footer').style.cssText = "background: white; color: black;"
+            
+            
+        }
+        
+        
+
+
+
+    
+   </script>
+</body>
+</html>

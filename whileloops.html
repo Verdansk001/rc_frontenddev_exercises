@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <input   type="text" placeholder="enter your number" id="input">
+     <button id="btn">Guess</button>
+    <script>
+      document.getElementById('btn').onclick = function guessGame() {
+        
+        var isCorrect = false
+        var myNumber = document.getElementById('input').value
+        var numberOfGuesses = 1
+
+        while (isCorrect == false) {
+         var guess = Math.random()
+        guess = guess * 10
+        guess = Math.floor(guess)
+
+         if (guess == myNumber) {
+            isCorrect = true
+            alert( 'Correct.' + guess + 'was the number and you got it in' + numberOfGuesses + 'trials.')
+         }else{
+            numberOfGuesses++
+         }
+        }
+      }
+    </script>
+</body>
+</html>
